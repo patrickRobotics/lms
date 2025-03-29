@@ -1,5 +1,8 @@
 # Loan Management Service
-You are required to develop a simple Loan Management Module (LMS) which will be integrated to the Bank's CORE Banking system (CBS) and the Scoring Engine. 
+This is a simple Loan Management Module (LMS) which will be integrated to the Bank's CORE Banking system [(CBS)](https://github.com/patrickRobotics/cbs) 
+and the [Scoring Engine](https://github.com/patrickRobotics/scoring-engine) to extend micro loan products to the Bank customers. 
+The Lending Platform wil extend APIs to the Mobile Application, query the Scoring Engine, and consume data from the CORE Banking System, here, 
+via a [middleware service](https://github.com/patrickRobotics/lms_middleware).
 
 Customers will be accessing the lending product through a Bank Mobile Application. The CBS system exposes two SOAP APIS;
 1. KYC API from which one is able to fetch customer information
@@ -17,7 +20,12 @@ LMS can query the scoring engine to get the score and the limit before issuing a
 2. Query score using the token/application_id from the previous step.
 
 ## Setup
-1. Create a **.env** file to store secret variables for your environment and populate values for the keys listed below:
+Clone all 4 repositories related to this project:
+- [Core Banking Service](https://github.com/patrickRobotics/cbs)
+- [Scoring Service](https://github.com/patrickRobotics/scoring-engine)
+- [Middleware Service](middleware service](https://github.com/patrickRobotics/lms_middleware)
+
+Create a **.env** file to store secret variables for your environment and populate values for the keys listed below:
 ```
 SOAP_KYC_URL=        # HOST URL for the main Customer KYC SOAP service, e.g. http://localhost:8001
 SCORING_URL=         # HOST URL for the scoring-service, e.g. http://127.0.0.1:5001
