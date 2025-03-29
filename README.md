@@ -23,7 +23,7 @@ LMS can query the scoring engine to get the score and the limit before issuing a
 Clone all 4 repositories related to this project:
 - [Core Banking Service](https://github.com/patrickRobotics/cbs)
 - [Scoring Service](https://github.com/patrickRobotics/scoring-engine)
-- [Middleware Service](middleware service](https://github.com/patrickRobotics/lms_middleware)
+- [Middleware Service](https://github.com/patrickRobotics/lms_middleware)
 
 Create a **.env** file to store secret variables for your environment and populate values for the keys listed below:
 ```
