@@ -3,7 +3,7 @@ You are required to develop a simple Loan Management Module (LMS) which will be 
 
 Customers will be accessing the lending product through a Bank Mobile Application. The CBS system exposes two SOAP APIS;
 1. KYC API from which one is able to fetch customer information
-2. Transactions Data API which on is able to fetch historical transactional records a the customer.
+2. Transactions Data API which on is able to fetch historical transactional records of the customer.
 
 This LMS module exposes RESTful APIs to client Applications;
 1. Subscription API. The Mobile Application will submit a Customer Number
