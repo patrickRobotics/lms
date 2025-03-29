@@ -27,63 +27,66 @@ USERNAME=            # username for basic authentication on this service
 PASSWORD=            # password for basic auth on this service
 ```
 
-2. ## Create & Activate a Python virtualenvironment to install the needed dependencies.
-   `python3 -m venv .venv`
+## Create & Activate a Python virtualenvironment to install the needed dependencies.
+`python3 -m venv .venv`
 
-   `source .venv/bin/activate`
-4. ## Insall project dependencies
-   `pip install -r requirements.txt`
-6. ## Start the service
-   `flask run --host=0.0.0.0 --port=8000`
-8. ## Test loan application APIs
-   This project has used one customer for testing: customer number **234774784**.
-   
-   Before you can use the Loan Management Service, ensure the other services (**Scoring and KYC service**) are running and the HOST urls configured properly in the **.env** file.
+`source .venv/bin/activate`
 
-    a. Customer Subscribe: Send POST request to `http://127.0.0.1:<PORT>/api/v1/subscribe` providing payload; `{ "customer_number": 234774784 }`
-   
-    b. Loan appliction: Send POST request to `http://127.0.0.1:5002/api/v1/request-loan` providing payload; `{ "customer_number": 234774784, "amount": 1000 }`
-      Successful response will be as follows: 
-      ```json 
-      {
-        "application_id": "f679c506-119e-4f09-94f5-0ad597cb03b1",
-        "status": "PROCESSING"
-      }
-      ```
-      Customer who has not yet subscribed response looks like:
-      ```json
-      {
-          "error": "Customer not subscribed"
-      }   
-      ```
-      Customer with another loan application in progress looks like:
-      ```json
-      {
-          "error": "Loan already in progress"
-      }
-      ```
+## Insall project dependencies
+`pip install -r requirements.txt`
 
-    c. Check loan status: Send GET request to `http://127.0.0.1:5002/api/v1/loan-status/<application_id>`
-      Loan approved response looks like:
+## Start the service
+`flask run --host=0.0.0.0 --port=8000`
 
-      ```json
-      {
-        "amount": 1000.0,
-        "application_id": "f679c506-119e-4f09-94f5-0ad597cb03b1",
-        "customer_number": 234774784,
-        "processed_at": 1743208194.9507303,
-        "reason": null,
-        "score": 508,
-        "status": "APPROVED"
-      }
-      ```
+## Test loan application APIs
+This project has used one customer for testing: customer number **234774784**.
 
-      invalid application_id response looks like:
-      ```json
-      {
-          "error": "Application ID: f679c506-119e-4f09-94f5-0ad597cb03b1 not found"
-      }
-      ```
+Before you can use the Loan Management Service, ensure the other services (**Scoring and KYC service**) are running and the HOST urls configured properly in the **.env** file.
+
+a. Customer Subscribe: Send POST request to `http://127.0.0.1:<PORT>/api/v1/subscribe` providing payload; `{ "customer_number": 234774784 }`
+
+b. Loan appliction: Send POST request to `http://127.0.0.1:5002/api/v1/request-loan` providing payload; `{ "customer_number": 234774784, "amount": 1000 }`
+   Successful response will be as follows: 
+   ```json 
+   {
+     "application_id": "f679c506-119e-4f09-94f5-0ad597cb03b1",
+     "status": "PROCESSING"
+   }
+   ```
+   Customer who has not yet subscribed response looks like:
+   ```json
+   {
+       "error": "Customer not subscribed"
+   }   
+   ```
+   Customer with another loan application in progress looks like:
+   ```json
+   {
+       "error": "Loan already in progress"
+   }
+   ```
+
+c. Check loan status: Send GET request to `http://127.0.0.1:5002/api/v1/loan-status/<application_id>`
+   Loan approved response looks like:
+
+   ```json
+   {
+     "amount": 1000.0,
+     "application_id": "f679c506-119e-4f09-94f5-0ad597cb03b1",
+     "customer_number": 234774784,
+     "processed_at": 1743208194.9507303,
+     "reason": null,
+     "score": 508,
+     "status": "APPROVED"
+   }
+   ```
+
+   invalid application_id response looks like:
+   ```json
+   {
+       "error": "Application ID: f679c506-119e-4f09-94f5-0ad597cb03b1 not found"
+   }
+   ```
 
    
 A [Postman collection](https://galactic-crater-247223.postman.co/workspace/New-Team-Workspace~d654769e-41a2-41a1-b0b2-7e6cfdc6fbfa/collection/2496867-0b5a4eb2-ab77-4e42-8911-78cc232a4f36?action=share&creator=2496867) has been provided here for quick testing
