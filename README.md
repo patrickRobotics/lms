@@ -23,6 +23,8 @@ SOAP_KYC_URL=        # HOST URL for the main Customer KYC SOAP service, e.g. htt
 SCORING_URL=         # HOST URL for the scoring-service, e.g. http://127.0.0.1:5001
 SOAP_USER=admin      # user name used to authenticate on the Customer KYC Service
 SOAP_PASS=pwd123     # password for the user above
+USERNAME=            # username for basic authentication on this service
+PASSWORD=            # password for basic auth on this service
 ```
 
 2. ## Create & Activate a Python virtualenvironment to install the needed dependencies.

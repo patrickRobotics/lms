@@ -24,8 +24,10 @@ LOAN_PROCESSING_TIME = (10, 30)  # Min/max seconds
 # In-memory stores
 active_subscriptions = {}
 loan_applications = {}
+USERNAME = os.getenv('USERNAME')
+PASSWORD = os.getenv('PASSWORD')
 users = {
-    "loanadmin": generate_password_hash("loanpass123")
+    USERNAME: generate_password_hash(PASSWORD)
 }
 
 # Mock SOAP and Scoring Service Config
