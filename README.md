@@ -62,3 +62,4 @@ SOAP_PASS=pwd123     # password for the user above
       }
       ```
    
+A [Postman collection](https://galactic-crater-247223.postman.co/workspace/New-Team-Workspace~d654769e-41a2-41a1-b0b2-7e6cfdc6fbfa/collection/2496867-0b5a4eb2-ab77-4e42-8911-78cc232a4f36?action=share&creator=2496867) has been provided here for quick testing
