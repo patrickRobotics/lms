@@ -29,9 +29,8 @@ users = {
 }
 
 # Mock SOAP and Scoring Service Config
-SOAP_KYC_URL = os.getenv('SOAP_KYC_URL')           #"http://localhost:8093/service/customer"
-SCORING_URL = os.getenv('SCORING_URL')             #"http://localhost:8095/api/initiate-scoring"
-SCORING_CHECK_URL = os.getenv('SCORING_CHECK_URL') #"http://localhost:8095/api/check-score/"
+SOAP_KYC_URL = os.getenv('SOAP_KYC_URL')           # http://localhost:8093
+SCORING_URL = os.getenv('SCORING_URL')             # http://localhost:8095
 SOAP_USER = os.getenv('SOAP_USER')
 SOAP_PASS = os.getenv('SOAP_PASS')
 
@@ -101,7 +100,7 @@ def get_customer_score(customer_number, retries=MAX_RETRIES):
     # Check score with retries
     for _ in range(retries):
         check_response = requests.get(
-            f"{SCORING_CHECK_URL}/api/v1/scoring/queryScore/{scoring_token}",
+            f"{SCORING_URL}/api/v1/scoring/queryScore/{scoring_token}",
             auth=HTTPBasicAuth(SOAP_USER, SOAP_PASS)
         )
 
