@@ -25,8 +25,10 @@ SOAP_USER=admin      # user name used to authenticate on the Customer KYC Servic
 SOAP_PASS=pwd123     # password for the user above
 ```
 
-2. ## Create a Python virtualenvironment to install the needed dependencies.
+2. ## Create & Activate a Python virtualenvironment to install the needed dependencies.
    `python3 -m venv .venv`
+
+   `source .venv/bin/activate`
 4. ## Insall project dependencies
    `pip install -r requirements.txt`
 6. ## Start the service
