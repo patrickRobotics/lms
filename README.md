@@ -20,10 +20,12 @@ LMS can query the scoring engine to get the score and the limit before issuing a
 2. Query score using the token/application_id from the previous step.
 
 ## Setup
-Clone all 4 repositories related to this project:
+Clone all 4 repositories related to this project, into their folders:
 - [Core Banking Service](https://github.com/patrickRobotics/cbs)
 - [Scoring Service](https://github.com/patrickRobotics/scoring-engine)
 - [Middleware Service](https://github.com/patrickRobotics/lms_middleware)
+
+Navigate to this project after cloning it.
 
 Create a **.env** file to store secret variables for your environment and populate values for the keys listed below:
 ```
