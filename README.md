@@ -48,6 +48,18 @@ SOAP_PASS=pwd123     # password for the user above
         "status": "PROCESSING"
       }
       ```
+      Customer who has not yet subscribed response looks like:
+      ```json
+      {
+          "error": "Customer not subscribed"
+      }   
+      ```
+      Customer with another loan application in progress looks like:
+      ```json
+      {
+          "error": "Loan already in progress"
+      }
+      ```
 
     c. Check loan status: Send GET request to `http://127.0.0.1:5002/api/v1/loan-status/<application_id>`
       Loan approved response looks like:
