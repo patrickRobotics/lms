@@ -1,3 +1,21 @@
+# Loan Management Service
+You are required to develop a simple Loan Management Module (LMS) which will be integrated to the Bank's CORE Banking system (CBS) and the Scoring Engine. 
+
+Customers will be accessing the lending product through a Bank Mobile Application. The CBS system exposes two SOAP APIS;
+1. KYC API from which one is able to fetch customer information
+2. Transactions Data API which on is able to fetch historical transactional records a the customer.
+
+This LMS module exposes RESTful APIs to client Applications;
+1. Subscription API. The Mobile Application will submit a Customer Number
+2. Loan request API. The Mobile Application will submit a customer Number and an amount
+3. Loan Status API. The Mobile Application will query for the loan status.
+
+**Note:** Customers should not be able to apply for another loan if there is an ongoing loan request.
+
+LMS can query the scoring engine to get the score and the limit before issuing a loan to the customer. Getting scoring and limits is a two steps process;
+1. Initiate query score, which you submit a customer number and receive back a token (application_id)
+2. Query score using the token/application_id from the previous step.
+
 ## Setup
 1. Create a **.env** file to store secret variables for your environment and populate values for the keys listed below:
 ```
